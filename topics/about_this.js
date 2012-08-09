@@ -1,42 +1,42 @@
-module("About this (topics/about_this.js)");
+module('About this (topics/about_this.js)');
 
-test("'this' inside a method", function () {
+test("'this' inside a method", function() {
 	var person = {
 		name: 'bob',
-		intro: function () {
-			return "Hello, my name is " + this.__;
-		} 
-	}
-	equals(person.intro(), "Hello, my name is bob");
+		intro: function() {
+			return 'Hello, my name is ' + this.__;
+		}
+	};
+	equals(person.intro(), 'Hello, my name is bob');
 });
 
-test("'this' on unattached function", function () {
+test("'this' on unattached function", function() {
 	var person = {
 		handle: 'bob',
-		intro: function () {
-			return "Hello, my name is " + this.handle;
-		} 
-	}
+		intro: function() {
+			return 'Hello, my name is ' + this.handle;
+		}
+	};
 
 	var alias = person.intro;
-	
-	// if the function called as an object property 'this' is the global context 
+
+	// if the function called as an object property 'this' is the global context
 	// (window in a browser)
 	window.__ = 'Peter';
-	equals("Hello, my name is Peter", alias());
+	equals('Hello, my name is Peter', alias());
 });
 
-test("'this' set explicitly", function () {
+test("'this' set explicitly", function() {
 	var person = {
 		handle: 'bob',
-		intro: function () {
-			return "Hello, my name is " + this.handle;
-		} 
-	}
+		intro: function() {
+			return 'Hello, my name is ' + this.handle;
+		}
+	};
 
 	// calling a function with 'call' lets us assign 'this' explicitly
-	var message = person.intro.call({__: "Frank"});
-	equals(message, "Hello, my name is Frank");
+	var message = person.intro.call({__: 'Frank'});
+	equals(message, 'Hello, my name is Frank');
 });
 
 // extra credit: underscore.js has a 'bind' function http://documentcloud.github.com/underscore/#bind
