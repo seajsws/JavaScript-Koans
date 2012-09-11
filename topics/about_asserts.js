@@ -10,5 +10,5 @@ test('not', function() {
 });
 
 test('equals', function() {
-  equals(1 + 1, __, 'what will satisfy the equals assertion?');
+  equal(1 + 1, __, 'what will satisfy the equals assertion?');
 });

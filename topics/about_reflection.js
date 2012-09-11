@@ -11,10 +11,10 @@ var B = function() {
 B.prototype = new A();
 
 test('typeof', function() {
-  equals(typeof({}), __, 'what is the type of an empty object?');
-  equals(typeof('apple'), __, 'what is the type of a string?');
-  equals(typeof(-5), __, 'what is the type of -5?');
-  equals(typeof(false), __, 'what is the type of false?');
+  equal(typeof({}), __, 'what is the type of an empty object?');
+  equal(typeof('apple'), __, 'what is the type of a string?');
+  equal(typeof(-5), __, 'what is the type of -5?');
+  equal(typeof(false), __, 'what is the type of false?');
 });
 
 test('property enumeration', function() {
@@ -36,7 +36,7 @@ test('hasOwnProperty', function() {
   for (var a in b) {
     keys.push(a);
   }
-  equals(keys.length, __, 'how many elements are in the keys array?');
+  equal(keys.length, __, 'how many elements are in the keys array?');
   ok(keys.equalTo([__, __]), 'what are the properties of the array?');
 
   // hasOwnProperty returns true if the parameter is a property directly on the object,
@@ -47,21 +47,21 @@ test('hasOwnProperty', function() {
       ownKeys.push(r);
     }
   }
-  equals(ownKeys.length, __, 'how many elements are in the ownKeys array?');
+  equal(ownKeys.length, __, 'how many elements are in the ownKeys array?');
   ok(ownKeys.equalTo([__, __]), 'what are the own properties of the array?');
 });
 
 test('constructor property', function() {
   var a = new A();
   var b = new B();
-  equals(typeof(a.constructor), __, "what is the type of a's constructor?");
-  equals(a.constructor.name, __, "what is the name of a's constructor?");
-  equals(b.constructor.name, __, "what is the name of b's constructor?");
+  equal(typeof(a.constructor), __, "what is the type of a's constructor?");
+  equal(a.constructor.name, __, "what is the name of a's constructor?");
+  equal(b.constructor.name, __, "what is the name of b's constructor?");
 });
 
 // test('eval', function() {
 //   // eval executes a string
 //   var result = '';
 //   eval("result = 'apple' + ' ' + 'pie'");
-//   equals(result, __, 'what is the value of result?');
+//   equal(result, __, 'what is the value of result?');
 // });

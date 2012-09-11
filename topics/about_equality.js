@@ -2,11 +2,11 @@
 module('About Equality (topics/about_equality.js)');
 
 test('numeric equality', function() {
-  equals(3 + __, 7, 'hmmmm?');
+  equal(3 + __, 7, 'hmmmm?');
 });
 
 test('string equality', function() {
-  equals('3' + __, '37', 'concatenate the strings');
+  equal('3' + __, '37', 'concatenate the strings');
 });
 
 test('equality without type coercion', function() {
@@ -18,5 +18,5 @@ test('equality with type coercion', function() {
 });
 
 test('string literals', function() {
-  equals('frankenstein', '__', 'quote types are interchangable, but must match.');
+  equal('frankenstein', '__', 'quote types are interchangable, but must match.');
 });
