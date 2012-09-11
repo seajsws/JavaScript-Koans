@@ -22,3 +22,7 @@ QUnit.done(
       $(failed[0]).show();
     }
   });
+
+var not = function(state, message) {
+  return ok(!state, message);
+};
