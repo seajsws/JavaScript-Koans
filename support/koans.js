@@ -20,6 +20,9 @@ QUnit.done(
       var failed = $('ol#qunit-tests > li.fail');
       failed.hide();
       $(failed[0]).show();
+      $('#test-actual').hide();
+      $('#test-diff').hide();
+
     }
   });
 
