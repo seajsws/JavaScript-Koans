@@ -6,7 +6,7 @@ test('ok', function() {
 });
 
 test('not', function() {
-  not('af', 'what is a false value?');
+  not(__, 'what is a false value?');
 });
 
 test('equals', function() {
